@@ -23,15 +23,15 @@ const RCubeCards = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-8 px-6">
+    <section className="bg-gray-50 py-8 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
           Our Apps
         </h2>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
           {cards.map((card, index) => (
             <a
               key={index}
@@ -51,19 +51,21 @@ const RCubeCards = () => {
                 <h3 className="text-2xl font-semibold mb-3 text-gray-800">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 mb-6 px-2">{card.desc}</p>
-                <div className="mt-auto flex gap-4">
+                <p className="text-gray-600 mb-6 px-2 text-sm sm:text-base">
+                  {card.desc}
+                </p>
+                <div className="mt-auto flex flex-col sm:flex-row gap-4 w-full justify-center">
                   <Button
                     type="primary"
                     href={card.playstore}
                     target="_blank"
-                    className="bg-green-600 hover:bg-green-700 font-semibold"
+                    className="bg-green-600 hover:bg-green-700 font-semibold w-full sm:w-auto"
                   >
                     Download App
                   </Button>
                   <Button
                     type="primary"
-                    className="bg-blue-600 hover:bg-blue-700 font-semibold pointer-events-none"
+                    className="bg-blue-600 hover:bg-blue-700 font-semibold pointer-events-none w-full sm:w-auto"
                   >
                     {card.buttonLabel}
                   </Button>
